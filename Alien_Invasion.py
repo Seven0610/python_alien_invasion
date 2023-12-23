@@ -20,7 +20,7 @@ class AlienInvasion:
         pygame.init()                                                                # 初始化游戏并创建游戏资源
         self.settings = Settings()                                                   # 游戏设置
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        pygame.display.set_caption("外星人入侵")                                      # 设置窗口标题
+        pygame.display.set_caption("外星人入侵β")                                     # 设置窗口标题
         self.stats = Gamestats(self)                                                 # 创建一个用于存储游戏统计信息的实例
         self.ship = Ship(self, 'images/ship.png')                                    # 创建飞船
         self.bullets = pygame.sprite.Group()                                         # 存储子弹的编组
