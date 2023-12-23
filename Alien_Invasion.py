@@ -20,8 +20,6 @@ class AlienInvasion:
         pygame.init()                                                                # 初始化游戏并创建游戏资源
         self.settings = Settings()                                                   # 游戏设置
         self.screen = pygame.display.set_mode((self.settings.screen_width, self.settings.screen_height))
-        self.title_font = pygame.font.SysFont('Times New Roman', 40)                 # 创建字体对象
-        self.title_text = self.title_font.render('Alien  Invention', True, (0, 0, 0))  # 创建文本图像
         pygame.display.set_caption("外星人入侵")                                      # 设置窗口标题
         self.stats = Gamestats(self)                                                 # 创建一个用于存储游戏统计信息的实例
         self.ship = Ship(self, 'images/ship.png')                                    # 创建飞船
@@ -106,8 +104,7 @@ class AlienInvasion:
 
     def _update_screen(self):  # 更新屏幕上的图像，并切换到新屏幕
         if self.stats.play_click == False: # 游戏未开始                                      
-            self.screen.blit(self.settings.background1, (0, 0))
-            self.screen.blit(self.title_text, (469, 300))  # 在屏幕上绘制标题  
+            self.screen.blit(self.settings.background1, (0, 0)) 
             if self.settings.show_youxishuoming_flag:
                 self.screen.blit(self.settings.youxiguize_image, (0, 0))
         if self.stats.play_click == True: # 游戏开始
